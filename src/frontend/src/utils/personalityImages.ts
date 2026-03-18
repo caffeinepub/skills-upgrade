@@ -1,0 +1,18 @@
+export const personalityImages: Record<string, string> = {
+  INTJ: "/assets/generated/personality_intj.dim_400x400.jpg",
+  INTP: "/assets/generated/personality_intp.dim_400x400.jpg",
+  ENTJ: "/assets/generated/personality_entj.dim_400x400.jpg",
+  ENTP: "/assets/generated/personality_entp.dim_400x400.jpg",
+  INFJ: "/assets/generated/personality_infj.dim_400x400.jpg",
+  INFP: "/assets/generated/personality_infp.dim_400x400.jpg",
+  ENFJ: "/assets/generated/personality_enfj.dim_400x400.jpg",
+  ENFP: "/assets/generated/personality_enfp.dim_400x400.jpg",
+  ISTJ: "/assets/generated/personality_istj.dim_400x400.jpg",
+  ISFJ: "/assets/generated/personality_isfj.dim_400x400.jpg",
+  ESTJ: "/assets/generated/personality_estj.dim_400x400.jpg",
+  ESFJ: "/assets/generated/personality_esfj.dim_400x400.jpg",
+  ISTP: "/assets/generated/personality_istp.dim_400x400.jpg",
+  ISFP: "/assets/generated/personality_isfp.dim_400x400.jpg",
+  ESTP: "/assets/generated/personality_estp.dim_400x400.jpg",
+  ESFP: "/assets/generated/personality_esfp.dim_400x400.jpg",
+};

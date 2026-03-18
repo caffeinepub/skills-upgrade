@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Font Faces ─────────────────────────────────────────────────── */
+@font-face {
+  font-family: "Fraunces";
+  src: url("/assets/fonts/Fraunces[opsz,SOFT,WONK,wght].woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "General Sans";
+  src: url("/assets/fonts/GeneralSans-Variable.woff2") format("woff2");
+  font-weight: 200 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    /* ── Warm off-white light palette ── */
+    --background: 0.97 0.008 80;
+    --foreground: 0.18 0.02 60;
+
+    --card: 0.99 0.005 80;
+    --card-foreground: 0.18 0.02 60;
+
+    --popover: 0.99 0.005 80;
+    --popover-foreground: 0.18 0.02 60;
+
+    --primary: 0.45 0.12 40;
+    --primary-foreground: 0.98 0.005 80;
+
+    --secondary: 0.93 0.012 75;
+    --secondary-foreground: 0.3 0.03 55;
+
+    --muted: 0.93 0.012 75;
+    --muted-foreground: 0.52 0.04 60;
+
+    --accent: 0.93 0.012 75;
+    --accent-foreground: 0.3 0.03 55;
+
+    --destructive: 0.55 0.22 27;
+    --destructive-foreground: 0.98 0 0;
+
+    --border: 0.88 0.018 70;
+    --input: 0.88 0.018 70;
+    --ring: 0.45 0.12 40;
+
+    /* ── Chart ── */
+    --chart-1: 0.55 0.18 40;
+    --chart-2: 0.60 0.15 160;
+    --chart-3: 0.55 0.15 250;
+    --chart-4: 0.65 0.18 80;
+    --chart-5: 0.60 0.18 320;
+
+    /* ── Sidebar ── */
+    --sidebar: 0.95 0.010 78;
+    --sidebar-foreground: 0.18 0.02 60;
+    --sidebar-primary: 0.45 0.12 40;
+    --sidebar-primary-foreground: 0.98 0.005 80;
+    --sidebar-accent: 0.90 0.015 75;
+    --sidebar-accent-foreground: 0.3 0.03 55;
+    --sidebar-border: 0.88 0.018 70;
+    --sidebar-ring: 0.45 0.12 40;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: light;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "General Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* ── Custom utilities ─────────────────────────────────────────────── */
+@layer utilities {
+  /* Warm paper texture background */
+  .bg-paper {
+    background-color: oklch(var(--background));
+    background-image:
+      radial-gradient(ellipse 70% 50% at 50% -10%, oklch(0.55 0.18 40 / 0.07) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 60% at 90% 90%, oklch(0.60 0.15 80 / 0.05) 0%, transparent 55%);
+  }
+
+  /* Animated gradient underline */
+  .gradient-underline {
+    background: linear-gradient(
+      90deg,
+      oklch(0.55 0.18 40),
+      oklch(0.65 0.18 80),
+      oklch(0.55 0.18 40)
+    );
+    background-size: 200% 100%;
+    animation: slide-gradient 3s linear infinite;
+    height: 3px;
+    border-radius: 9999px;
+  }
+
+  @keyframes slide-gradient {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+  }
+
+  /* Fade in up */
+  .fade-in-up {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+  }
+
+  .fade-in-up-1 { animation-delay: 0.1s; }
+  .fade-in-up-2 { animation-delay: 0.25s; }
+  .fade-in-up-3 { animation-delay: 0.4s; }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
